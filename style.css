@@ -1,3 +1,76 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: futura;
+}
+
 body {
-	background: red;
+	background-image: url('background.jpg');
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+}
+
+.wrapper {
+	background: white;
+	height: 70%;
+	width: 80%;
+	display: flex;
+}
+
+
+
+.player-0-panel {
+	width: 50%;
+	padding: 4rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+
+.player-0-name {
+	font-size: 2rem;
+}
+
+.player-score {
+	font-size: 4rem;
+	color: red;
+	margin-top: 5%;
+	letter-spacing: 6px;
+}
+
+.player-current-box{
+	font-size: 2rem;
+	display: flex;flex-direction: column;
+	justify-content: flex-end;
+	height: 100%;
+	padding-bottom: 10%;
+}
+
+.player-current-label{
+	font-size: 2rem;
+
+}
+
+.player-current-score {
+	align-self: center;
+}
+
+
+.player-1-panel {
+	width: 50%;
+	background: gray;
+	padding: 4rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.player-1-name {
+	font-size: 2rem;
 }
