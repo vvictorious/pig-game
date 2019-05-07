@@ -5,25 +5,26 @@
 	font-family: futura;
 }
 
-body {
+.hero {
 	background-image: url('background.jpg');
 	width: 100%;
 	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;	
 }
 
 .wrapper {
-	background: white;
-	height: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 	width: 80%;
+	height: 60%;    
+    transform: translate(-50%, -50%);
+    background-color: #fff;
 	display: flex;
 }
 
 
-
-.player-0-panel {
+.player-0-panel,
+.player-1-panel {
 	width: 50%;
 	padding: 4rem;
 	display: flex;
@@ -31,46 +32,81 @@ body {
 	align-items: center;
 }
 
+.player-0-panel {
+	background: gray;
+}
 
-
-.player-0-name {
+.player-name {
 	font-size: 2rem;
+	margin-bottom: 1rem;
 }
 
 .player-score {
-	font-size: 4rem;
-	color: red;
-	margin-top: 5%;
-	letter-spacing: 6px;
+	font-size: 3rem;
+	color: #780000 ;
 }
 
-.player-current-box{
-	font-size: 2rem;
-	display: flex;flex-direction: column;
+.player-current-box {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
 	justify-content: flex-end;
 	height: 100%;
-	padding-bottom: 10%;
 }
 
-.player-current-label{
-	font-size: 2rem;
-
+.player-current-label {
+	font-size: 1.5rem;
 }
 
 .player-current-score {
-	align-self: center;
+	font-size: 1.5rem;
 }
 
-
-.player-1-panel {
-	width: 50%;
-	background: gray;
-	padding: 4rem;
+.middle-stuff {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 }
 
-.player-1-name {
-	font-size: 2rem;
+button {
+    background: #ef3d47;
+    border: 1px solid black;
+    font-family: Lato;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 300;
+    transition: background-color 0.5s, color 0.3s;
+    width: 60%;
+    align-self: center;
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+
+button:hover { font-weight: 500; }
+
+button:focus {
+    outline: none;
+}
+
+.btn-new {
+	
+}
+
+.btn-roll {
+	order: 2;
+}
+
+.btn-hold {
+	order: 3;
+}
+
+.dice {
+	order: 1;
+	width: 40%;
+	align-self: center;
+
 }
