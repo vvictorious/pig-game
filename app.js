@@ -24,6 +24,7 @@ rollButton.addEventListener('click', () => {
 	} else {
 		//this is where I change the active player
 		activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+		roundScore = 0;
 	}
 });
 
