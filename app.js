@@ -6,6 +6,8 @@ let scores = [0, 0];
 let roundScore = 0;
 let activePlayer = 0;
 
+init();
+
 
 //these are the buttons
 const newButton = document.querySelector('.btn-new');
@@ -18,38 +20,38 @@ rollButton.addEventListener('click', () => {
 	let dice = Math.floor(Math.random() * 6) + 1;
 	let diceDom = document.querySelector('.dice');
 	diceDom.src = 'dice-' + dice + '.png'
-	if (dice !== 1) { //add score
+	if (dice !== 1) {
 		roundScore += dice;
 		document.querySelector('#current-' + activePlayer).textContent = roundScore;
-	} else {
-		//this is where I change the active player
+	} else { //if ya roll a 1
 		activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
-		roundScore = 0;  //reset the current score
-		document.getElementById('current-0').textContent = '0'; //change the dom
+		roundScore = 0;
+		document.getElementById('current-0').textContent = '0';
 		document.getElementById('current-1').textContent = '0';
-		document.querySelector('.player-0-panel').classList.toggle('active'); 
+		document.querySelector('.player-0-panel').classList.toggle('active');
 		document.querySelector('.player-1-panel').classList.toggle('active');
-			
 	}
 });
 
 
+//hold botton event listener
+//on this click I need the round score to go to scores array
+//then I need to display that in dom under id of score-
+//next step is change the roundScore back to 0
+//then change the active class and active player to the next player
+//finally when the score reaches a certain 
+
+holdButton.addEventListener('click', () => {
+	document.getElementById('score-' + activePlayer).textContent = roundScore;
+	roundScore = 0;
+	document.getElementById('current-' + activePlayer).textContent = '0';
+})
 
 
 
-// nextPlayer() => {
-// 	if (activePlayer === 0) {
-
-// 	}
-// }
-
-
-// function nextPlayer (){
-// 		activePlayer === 0  ? activePlayer = 1 : activePlayer = 0;
-// 		roundScore = 0;
-// 		document.getElementById('current-0').textContent = '0';
-// 		document.getElementById('current-1').textContent = '0';
-// 		document.querySelector('.player-0-panel').classList.toggle('active');
-// 		document.querySelector('.player-1-panel').classList.toggle('active');
-// 		document.querySelector('.dice').style.display = 'none';	
-// }
+function init(){
+		document.getElementById('current-0').textContent = '0';
+		document.getElementById('current-1').textContent = '0';	
+		document.getElementById('score-0').textContent = '0';
+		document.getElementById('score-1').textContent = '0';
+}
