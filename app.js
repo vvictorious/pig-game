@@ -42,9 +42,25 @@ rollButton.addEventListener('click', () => {
 //finally when the score reaches a certain 
 
 holdButton.addEventListener('click', () => {
-	document.getElementById('score-' + activePlayer).textContent = roundScore;
-	roundScore = 0;
-	document.getElementById('current-' + activePlayer).textContent = '0';
+	if (activePlayer === 0) {
+		//the number changes, but the number is only stored in the dom
+		scores[activePlayer] = scores[activePlayer] + roundScore;
+		document.getElementById('score-' + activePlayer).textContent = scores[activePlayer];
+		roundScore = 0;
+		document.getElementById('current-' + activePlayer).textContent = '0';	
+		document.querySelector('.player-0-panel').classList.toggle('active');
+		document.querySelector('.player-1-panel').classList.toggle('active');		
+		activePlayer = 1;	
+	} else {
+		scores[activePlayer] = scores[activePlayer] + roundScore;
+		document.getElementById('score-' + activePlayer).textContent = scores[activePlayer];
+		roundScore = 0;
+		document.getElementById('current-' + activePlayer).textContent = '0';
+		document.querySelector('.player-0-panel').classList.toggle('active');
+		document.querySelector('.player-1-panel').classList.toggle('active');
+		activePlayer = 0;
+	}
+
 })
 
 
