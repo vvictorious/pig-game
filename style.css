@@ -33,7 +33,7 @@
 }
 
 .player-0-panel {
-	background: gray;
+	
 }
 
 .player-name {
@@ -44,6 +44,19 @@
 .player-score {
 	font-size: 3rem;
 	color: #780000 ;
+}
+
+.active { background-color: #f7f7f7; }
+.active .player-name { font-weight: 300; }
+
+.active .player-name::after {
+    content: "\2022";
+    font-size: 47px;
+    /*position: absolute;*/
+    color: #EB4D4D;
+    top: -7px;
+    right: 10px;
+    
 }
 
 .player-current-box {
