@@ -11,6 +11,25 @@
 	height: 100vh;
 }
 
+.instructions {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	width: 90%;
+	padding: 15px 10px;
+	background-color: rgba(0,0,0,.6);
+	color: white;
+	letter-spacing: .5px;
+}
+
+.instructions h1 {
+	margin: 0 auto;
+}
+
+.instructions-text {
+
+}
+
 .wrapper {
     position: absolute;
     top: 50%;
