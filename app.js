@@ -2,11 +2,8 @@ console.log('Hello World');
 
 
 //these are going to be the scores and active players
-let scores = [0, 0];
-let roundScore = 0;
-let activePlayer = 0;
-
-init();
+	var scores, roundScore, activePlayer;
+	init();
 
 
 //these are the buttons
@@ -24,12 +21,7 @@ rollButton.addEventListener('click', () => {
 		roundScore += dice;
 		document.querySelector('#current-' + activePlayer).textContent = roundScore;
 	} else { //if ya roll a 1
-		activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
-		roundScore = 0;
-		document.getElementById('current-0').textContent = '0';
-		document.getElementById('current-1').textContent = '0';
-		document.querySelector('.player-0-panel').classList.toggle('active');
-		document.querySelector('.player-1-panel').classList.toggle('active');
+		nextPlayer();
 	}
 });
 
@@ -40,7 +32,6 @@ rollButton.addEventListener('click', () => {
 //next step is change the roundScore back to 0
 //then change the active class and active player to the next player
 //finally when the score reaches a certain 
-
 holdButton.addEventListener('click', () => {
 	//hold the overall score in a variable
 	scores[activePlayer] = scores[activePlayer] + roundScore;
@@ -57,6 +48,8 @@ holdButton.addEventListener('click', () => {
 
 })
 
+newButton.addEventListener('click', init);
+
 
 function nextPlayer(){
 		activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
@@ -70,8 +63,19 @@ function nextPlayer(){
 
 
 function init(){
-		document.getElementById('current-0').textContent = '0';
-		document.getElementById('current-1').textContent = '0';	
-		document.getElementById('score-0').textContent = '0';
-		document.getElementById('score-1').textContent = '0';
+	scores = [0, 0];
+	roundScore = 0;
+	activePlayer = 0;		
+	document.getElementById('score-0').textContent = '0';
+	document.getElementById('score-1').textContent = '0';
+	document.getElementById('current-0').textContent = '0';
+	document.getElementById('current-1').textContent = '0';	
+	document.getElementById('name-0').textContent = 'Player 1';
+	document.getElementById('name-1').textContent = 'Player 2';
+	document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+	document.querySelector('.player-0-panel').classList.remove('winner');	
+	document.querySelector('.player-1-panel').classList.remove('winner');
+	document.querySelector('.player-0-panel').classList.remove('active');
+	document.querySelector('.player-0-panel').classList.add('active');	
+	document.querySelector('.player-1-panel').classList.remove('active');
 }
